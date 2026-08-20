@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrawan Kumar — Senior .NET Full Stack Developer &amp; Technical Lead</title>
+<meta name="description" content="Shrawan Kumar — Senior .NET Full Stack Developer and Technical Lead, 11+ years building distributed, cloud-native enterprise systems on .NET, Angular and AWS. Open to remote / hybrid / on-site roles, immediate joiner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10141c;
+    --ink-soft:#161c27;
+    --slate:#212938;
+    --slate-line:#333d4f;
+    --paper:#f3f0e6;
+    --paper-dim:#e9e3d2;
+    --paper-line:#d9d1b8;
+    --text-hi:#f5f3ec;
+    --text-lo:#8d96ab;
+    --text-dark:#181c24;
+    --text-dark-lo:#5d6270;
+    --amber:#e39a45;
+    --amber-hi:#f0b06a;
+    --teal:#4bb2a4;
+    --teal-hi:#6fcabd;
+    --radius:2px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text-dark);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk', system-ui, sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* -------- focus -------- */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--teal);
+    outline-offset:3px;
+  }
+
+  /* -------- nav -------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(16,20,28,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-brand{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; color:var(--text-hi); letter-spacing:0.02em;
+    display:flex; align-items:center; gap:8px;
+  }
+  .nav-brand .dot{width:7px;height:7px;border-radius:50%;background:var(--teal); box-shadow:0 0 0 3px rgba(75,178,164,0.18); flex-shrink:0;}
+  .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    font-family:'JetBrains Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--text-lo); text-decoration:none; transition:color .15s ease;
+  }
+  .nav-links a:hover{color:var(--text-hi);}
+  .nav-cta{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.04em;
+    color:var(--ink); background:var(--amber); padding:8px 14px; border-radius:var(--radius);
+    text-decoration:none; white-space:nowrap; transition:background .15s ease;
+  }
+  .nav-cta:hover{background:var(--amber-hi);}
+  .nav-toggle{display:none; background:none; border:1px solid var(--slate-line); color:var(--text-hi); font-family:'JetBrains Mono',monospace; font-size:12px; padding:6px 10px; border-radius:var(--radius); cursor:pointer;}
+
+  @media (max-width: 760px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--ink);
+      flex-direction:column; gap:0; border-bottom:1px solid rgba(255,255,255,0.08);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links li{border-top:1px solid rgba(255,255,255,0.06);}
+    .nav-links a{display:block; padding:14px 28px;}
+    .nav-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  /* -------- hero -------- */
+  .hero{
+    background:var(--ink);
+    color:var(--text-hi);
+    padding:150px 0 84px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .status-line{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'JetBrains Mono', monospace; font-size:12.5px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--teal-hi);
+    background:rgba(75,178,164,0.08); border:1px solid rgba(75,178,164,0.35);
+    padding:7px 14px; border-radius:20px; margin-bottom:28px;
+  }
+  .status-line .ping{
+    width:7px; height:7px; border-radius:50%; background:var(--teal); position:relative; flex-shrink:0;
+  }
+  .status-line .ping::after{
+    content:""; position:absolute; inset:-5px; border-radius:50%;
+    border:1px solid var(--teal); animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(0.6); opacity:0.9;}
+    100%{transform:scale(2.1); opacity:0;}
+  }
+  .hero h1{
+    font-size:clamp(38px, 6vw, 64px);
+    font-weight:700;
+    line-height:1.03;
+    color:var(--text-hi);
+  }
+  .hero h1 span{color:var(--text-lo); font-weight:500;}
+  .hero-role{
+    margin-top:16px; font-size:clamp(15px,2vw,19px); color:var(--text-lo);
+    font-family:'JetBrains Mono', monospace; letter-spacing:0.01em;
+  }
+  .hero-role b{color:var(--amber-hi); font-weight:500;}
+  .hero-desc{
+    margin-top:22px; max-width:600px; font-size:16px; color:#c4cad9;
+  }
+  .hero-actions{margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:0.03em;
+    padding:12px 22px; border-radius:var(--radius); text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px; transition:all .15s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--amber); color:var(--ink); font-weight:600;}
+  .btn-primary:hover{background:var(--amber-hi);}
+  .btn-ghost{border-color:rgba(255,255,255,0.22); color:var(--text-hi);}
+  .btn-ghost:hover{border-color:var(--teal); color:var(--teal-hi);}
+
+  .metric-row{
+    margin-top:64px; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .metric{
+    padding:20px 20px 0; border-right:1px solid rgba(255,255,255,0.12);
+  }
+  .metric:last-child{border-right:none;}
+  .metric .val{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:var(--text-hi);}
+  .metric .lbl{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--text-lo); text-transform:uppercase; letter-spacing:0.06em; margin-top:4px;}
+  @media (max-width:640px){
+    .metric-row{grid-template-columns:repeat(2,1fr);}
+    .metric{padding:16px 14px 0;}
+    .metric:nth-child(2){border-right:none;}
+  }
+
+  /* -------- section shell -------- */
+  section{padding:88px 0;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--teal);
+    display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{content:"//"; color:var(--amber); font-weight:600;}
+  .section-title{font-size:clamp(24px,3.2vw,34px); font-weight:700; max-width:640px;}
+  .section-sub{color:var(--text-dark-lo); font-size:15.5px; max-width:600px; margin-top:14px;}
+
+  /* -------- about -------- */
+  .about-grid{
+    margin-top:48px; display:grid; grid-template-columns:1.4fr 1fr; gap:56px; align-items:start;
+  }
+  .about-grid p{font-size:16.5px; color:#333a48;}
+  .about-grid p + p{margin-top:16px;}
+  .fact-card{
+    background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius); padding:22px;
+  }
+  .fact-card + .fact-card{margin-top:14px;}
+  .fact-card .k{font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-dark-lo);}
+  .fact-card .v{margin-top:6px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px;}
+  @media (max-width:800px){ .about-grid{grid-template-columns:1fr;} }
+
+  /* -------- experience pipeline -------- */
+  .pipeline{position:relative; margin-top:56px;}
+  .pipeline::before{
+    content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
+    background:repeating-linear-gradient(to bottom, var(--paper-line) 0 6px, transparent 6px 12px);
+  }
+  .job{position:relative; padding-left:44px; padding-bottom:52px;}
+  .job:last-child{padding-bottom:0;}
+  .job-node{
+    position:absolute; left:0; top:2px; width:20px; height:20px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--teal); display:flex; align-items:center; justify-content:center;
+  }
+  .job-node::after{content:""; width:7px; height:7px; border-radius:50%; background:var(--teal);}
+  .job.is-active .job-node{border-color:var(--amber);}
+  .job.is-active .job-node::after{background:var(--amber);}
+  .job-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 14px; justify-content:space-between;}
+  .job-title-wrap{display:flex; flex-direction:column; gap:2px;}
+  .job-title{font-size:19px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
+  .job-org{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--text-dark-lo);}
+  .job-meta{display:flex; align-items:center; gap:10px; flex-shrink:0;}
+  .job-date{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-dark-lo); white-space:nowrap;}
+  .tag{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em;
+    padding:3px 9px; border-radius:12px; white-space:nowrap; font-weight:600;
+  }
+  .tag-active{background:rgba(227,154,69,0.16); color:#a1651c; border:1px solid rgba(227,154,69,0.5);}
+  .tag-done{background:rgba(75,178,164,0.14); color:#1f6d62; border:1px solid rgba(75,178,164,0.4);}
+  .job-body{margin-top:14px; padding-left:0; list-style:none;}
+  .job-body li{
+    position:relative; padding-left:18px; font-size:15px; color:#3a4150; margin-top:9px;
+  }
+  .job-body li::before{content:"▸"; position:absolute; left:0; color:var(--teal); font-size:12px; top:3px;}
+  .job-short{margin-top:10px; font-size:13.5px; color:var(--text-dark-lo); font-family:'JetBrains Mono',monospace;}
+
+  /* -------- skills / registry (dark) -------- */
+  .registry{background:var(--slate); color:var(--text-hi);}
+  .registry .eyebrow{color:var(--teal-hi);}
+  .registry .section-title{color:var(--text-hi);}
+  .registry .section-sub{color:var(--text-lo);}
+  .reg-grid{margin-top:48px; display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+  @media (max-width:760px){.reg-grid{grid-template-columns:1fr;}}
+  .reg-block{border:1px solid var(--slate-line); border-radius:var(--radius); padding:22px 22px 20px; background:rgba(255,255,255,0.015);}
+  .reg-block h3{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--amber-hi); margin-bottom:16px; display:flex; align-items:center; gap:8px;
+  }
+  .reg-block h3::before{content:"◇"; color:var(--teal);}
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:'JetBrains Mono',monospace; font-size:12.5px; padding:6px 11px; border-radius:var(--radius);
+    background:rgba(255,255,255,0.05); border:1px solid var(--slate-line); color:#d7dbe6;
+  }
+  .cert-strip{
+    margin-top:28px; display:flex; flex-wrap:wrap; gap:14px;
+  }
+  .cert-pill{
+    display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:var(--radius);
+    border:1px solid var(--slate-line); background:rgba(75,178,164,0.06); flex:1 1 260px;
+  }
+  .cert-pill .ic{color:var(--teal-hi); font-family:'JetBrains Mono',monospace; font-size:15px;}
+  .cert-pill .cn{font-size:13.5px; color:#e7e9f0;}
+  .cert-pill .cd{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-lo); margin-top:2px;}
+
+  /* -------- projects -------- */
+  .proj-grid{margin-top:48px; display:grid; grid-template-columns:1fr; gap:22px;}
+  .proj-card{
+    background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden;
+  }
+  .proj-head{
+    background:var(--ink); color:var(--text-hi); padding:20px 26px; display:flex; flex-wrap:wrap;
+    justify-content:space-between; align-items:baseline; gap:10px;
+  }
+  .proj-head h3{font-size:19px; font-family:'Space Grotesk',sans-serif; font-weight:700;}
+  .proj-head .loc{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--amber-hi);}
+  .proj-body{padding:22px 26px 26px;}
+  .proj-stack{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px;}
+  .proj-stack span{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-dark-lo);
+    border:1px solid var(--paper-line); padding:3px 9px; border-radius:10px;
+  }
+  .proj-overview{font-size:15px; color:#3a4150; margin-bottom:14px;}
+  .proj-body ul{margin:0; padding:0; list-style:none;}
+  .proj-body li{
+    position:relative; padding-left:18px; font-size:14.5px; color:#40465577; color:#3f4657; margin-top:8px;
+  }
+  .proj-body li::before{content:"▸"; position:absolute; left:0; color:var(--amber); font-size:12px; top:2px;}
+
+  /* -------- certs / education -------- */
+  .split-two{margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media (max-width:760px){.split-two{grid-template-columns:1fr;}}
+  .edu-item{border-left:2px solid var(--teal); padding-left:18px; margin-bottom:22px;}
+  .edu-item .deg{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16.5px;}
+  .edu-item .sch{font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--text-dark-lo); margin-top:3px;}
+
+  /* -------- footer / contact -------- */
+  footer{background:var(--ink); color:var(--text-hi); padding:80px 0 40px;}
+  .term{
+    background:var(--ink-soft); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius);
+    padding:26px 28px; max-width:640px;
+  }
+  .term-bar{display:flex; gap:6px; margin-bottom:16px;}
+  .term-bar span{width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.18);}
+  .term p{margin:0 0 10px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#c4cad9;}
+  .term .prompt{color:var(--teal-hi);}
+  .term .out{color:var(--amber-hi);}
+  footer h2{font-size:clamp(26px,4vw,40px); margin-bottom:18px;}
+  .contact-links{margin-top:30px; display:flex; flex-wrap:wrap; gap:14px;}
+  .foot-bottom{
+    margin-top:64px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-lo);
+  }
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><span class="dot"></span>SHRAWAN&nbsp;KUMAR<span style="color:var(--text-lo)">.dev</span></div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:shrawan.kumar2994@gmail.com">Hire me →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="status-line"><span class="ping"></span>Status: open to work — immediate joiner</div>
+    <h1>Shrawan Kumar<br><span>builds distributed systems that don't fall over.</span></h1>
+    <div class="hero-role">Senior .NET Full Stack Developer &amp; Technical Lead — <b>11+ years</b> · Delhi&nbsp;NCR, India</div>
+    <p class="hero-desc">I design and ship cloud-native, event-driven enterprise platforms on .NET, Angular and AWS — the kind that hold up under real production load, for legal-tech, document archival and B2B e-commerce systems used across the US and UK.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:shrawan.kumar2994@gmail.com">Get in touch</a>
+      <a class="btn btn-ghost" href="#experience">View experience</a>
+      <a class="btn btn-ghost" href="https://github.com/choubeyshrawan" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="metric-row">
+      <div class="metric"><div class="val">11+</div><div class="lbl">Years in production</div></div>
+      <div class="metric"><div class="val">99.9%</div><div class="lbl">Uptime delivered</div></div>
+      <div class="metric"><div class="val">4–7</div><div class="lbl">Engineers led</div></div>
+      <div class="metric"><div class="val">2</div><div class="lbl">Cloud certifications</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2 class="section-title">Eleven years turning complex requirements into systems that scale.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm a Senior .NET Full Stack Developer and Technical Lead building cloud-native, distributed enterprise applications with .NET, Angular, SQL Server and AWS. My focus is microservices, event-driven architecture, scalable API design and the unglamorous work of system modernization that actually moves the needle.</p>
+        <p>Day to day, that means leading engineering teams, owning architectural decisions, tightening performance under real load, and shipping secure, high-availability solutions — backed by hands-on depth in AWS serverless (Lambda, EventBridge, SQS/SNS, DynamoDB) and a habit of mentoring the developers around me.</p>
+      </div>
+      <div class="reveal">
+        <div class="fact-card"><div class="k">Location</div><div class="v">Delhi NCR, India</div></div>
+        <div class="fact-card"><div class="k">Availability</div><div class="v">Remote / Hybrid / On-site / In-office</div></div>
+        <div class="fact-card"><div class="k">Contact</div><div class="v">+91&nbsp;92113&nbsp;69951</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--paper-dim); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line);">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Experience</div>
+      <h2 class="section-title">Six roles, one thread: systems that stay up.</h2>
+      <p class="section-sub">Laid out like the message pipelines I build — each role a node, connected end to end.</p>
+    </div>
+
+    <div class="pipeline">
+
+      <div class="job is-active reveal">
+        <div class="job-node"></div>
+        <div class="job-head">
+          <div class="job-title-wrap">
+            <span class="job-title">Senior Associate .NET Developer</span>
+            <span class="job-org">NoblQ Pvt. Ltd. (formerly Jeevan Tech Pvt. Ltd.) · Remote</span>
+          </div>
+          <div class="job-meta">
+            <span class="tag tag-active">Active</span>
+            <span class="job-date">May 2023 — Present</span>
+          </div>
+        </div>
+        <ul class="job-body">
+          <li>Lead architecture and delivery of cloud-native legal-tech solutions on .NET 8, Angular, AWS Lambda, DynamoDB, OpenSearch and EventBridge, supporting large-scale document ingestion and search workflows.</li>
+          <li>Drove architectural refactoring that cut post-release defects by 30% and meaningfully improved long-term maintainability.</li>
+          <li>Led query tuning and async processing improvements that delivered 20–25% faster response times on high-traffic endpoints.</li>
+          <li>Identified and remediated critical security vulnerabilities — zero critical issues across all production security audits.</li>
+          <li>Primary technical point of contact for cross-functional teams; presented architecture and solutions to senior leadership.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-node"></div>
+        <div class="job-head">
+          <div class="job-title-wrap">
+            <span class="job-title">Technical Lead</span>
+            <span class="job-org">Incedo Inc. · Gurugram</span>
+          </div>
+          <div class="job-meta">
+            <span class="tag tag-done">Prod</span>
+            <span class="job-date">Nov 2021 — May 2023</span>
+          </div>
+        </div>
+        <ul class="job-body">
+          <li>Led a team of 4–7 engineers delivering enterprise-grade .NET applications supporting thousands of concurrent users.</li>
+          <li>Drove architecture reviews and technical design discussions to keep systems scalable, reliable and maintainable.</li>
+          <li>Cut recurring production incidents by 35% through root-cause-driven architectural fixes and proactive monitoring.</li>
+          <li>Set coding standards and review processes that lifted release stability and team velocity.</li>
+          <li>Mentored junior and mid-level developers; translated business requirements into scalable technical solutions with stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-node"></div>
+        <div class="job-head">
+          <div class="job-title-wrap">
+            <span class="job-title">Software Developer</span>
+            <span class="job-org">Cloudfy India Pvt. Ltd. (A Williams Commerce Company) · Noida</span>
+          </div>
+          <div class="job-meta">
+            <span class="tag tag-done">Prod</span>
+            <span class="job-date">Nov 2020 — Nov 2021</span>
+          </div>
+        </div>
+        <ul class="job-body">
+          <li>Built scalable B2B e-commerce platform features and third-party integrations on .NET Core and SQL Server.</li>
+          <li>Engineered integrations across multiple third-party platforms, improving data-sync reliability by ~40%.</li>
+          <li>Maintained 99.9%+ uptime for a live, high-traffic B2B e-commerce platform.</li>
+          <li>Refactored legacy modules, cutting bug turnaround time and improving maintainability.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-node"></div>
+        <div class="job-head">
+          <div class="job-title-wrap">
+            <span class="job-title">Software Developer</span>
+            <span class="job-org">ValueCoders Services LLP (A Vinove Company) · Noida</span>
+          </div>
+          <div class="job-meta">
+            <span class="tag tag-done">Archived</span>
+            <span class="job-date">Aug 2018 — Dec 2020</span>
+          </div>
+        </div>
+        <div class="job-short">Enterprise .NET delivery for global clients across web platforms and internal tooling.</div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-node"></div>
+        <div class="job-head">
+          <div class="job-title-wrap">
+            <span class="job-title">Software Developer</span>
+            <span class="job-org">Planet E-Com Solutions Pvt. Ltd. · Delhi</span>
+          </div>
+          <div class="job-meta">
+            <span class="tag tag-done">Archived</span>
+            <span class="job-date">Feb 2017 — Jul 2018</span>
+          </div>
+        </div>
+        <div class="job-short">.NET application development within an e-commerce product organization.</div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-node"></div>
+        <div class="job-head">
+          <div class="job-title-wrap">
+            <span class="job-title">Software Developer</span>
+            <span class="job-org">Sequence IT Solutions Pvt. Ltd. · Delhi</span>
+          </div>
+          <div class="job-meta">
+            <span class="tag tag-done">Archived</span>
+            <span class="job-date">Feb 2015 — Feb 2017</span>
+          </div>
+        </div>
+        <div class="job-short">Started my .NET career building and maintaining core web applications.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="registry">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Tech registry</div>
+      <h2 class="section-title">The stack I ship with, and the certifications behind it.</h2>
+    </div>
+    <div class="reg-grid">
+      <div class="reg-block reveal">
+        <h3>Backend</h3>
+        <div class="chip-row">
+          <span class="chip">C#</span><span class="chip">.NET 6/8</span><span class="chip">ASP.NET Core Web API</span>
+          <span class="chip">ASP.NET MVC</span><span class="chip">Entity Framework Core</span><span class="chip">LINQ</span>
+          <span class="chip">REST APIs</span><span class="chip">Python</span>
+        </div>
+      </div>
+      <div class="reg-block reveal">
+        <h3>Frontend</h3>
+        <div class="chip-row">
+          <span class="chip">Angular 16+</span><span class="chip">ReactJS</span><span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">HTML5 / CSS3</span>
+          <span class="chip">Bootstrap</span><span class="chip">SPA Architecture</span>
+        </div>
+      </div>
+      <div class="reg-block reveal">
+        <h3>Cloud &amp; Data</h3>
+        <div class="chip-row">
+          <span class="chip">AWS Lambda</span><span class="chip">API Gateway</span><span class="chip">DynamoDB</span>
+          <span class="chip">SQS / SNS</span><span class="chip">EventBridge</span><span class="chip">OpenSearch</span>
+          <span class="chip">CloudWatch</span><span class="chip">Athena / Glue / DMS</span><span class="chip">Azure Functions</span>
+          <span class="chip">SQL Server</span><span class="chip">MySQL</span><span class="chip">Redis</span>
+        </div>
+      </div>
+      <div class="reg-block reveal">
+        <h3>Architecture &amp; Tools</h3>
+        <div class="chip-row">
+          <span class="chip">Microservices</span><span class="chip">Event-Driven Architecture</span><span class="chip">CQRS</span>
+          <span class="chip">Clean Architecture</span><span class="chip">SOLID</span><span class="chip">Git</span>
+          <span class="chip">CI/CD</span><span class="chip">SonarQube</span><span class="chip">Claude Code</span><span class="chip">Cursor AI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-strip reveal">
+      <div class="cert-pill"><span class="ic">◆</span><div><div class="cn">AWS Certified AI Practitioner (AIF-C01)</div><div class="cd">Issued April 2026</div></div></div>
+      <div class="cert-pill"><span class="ic">◆</span><div><div class="cn">Microsoft Azure Developer Associate (AZ-204)</div><div class="cd">Issued April 2022</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Key projects</div>
+      <h2 class="section-title">Systems built for document archives, legal workflows and commerce.</h2>
+    </div>
+
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-head">
+          <h3>ArchiveIT</h3>
+          <span class="loc">USA · Deloitte</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-stack">
+            <span>.NET 6/8</span><span>Angular 16</span><span>GraphQL</span><span>AWS AppSync</span>
+            <span>Step Functions</span><span>EventBridge</span><span>DynamoDB</span><span>OpenSearch</span><span>Athena / Glue / DMS</span>
+          </div>
+          <p class="proj-overview">A large-scale enterprise document archival platform for tax and audit management — secure storage, retrieval and search with role-based access across user types.</p>
+          <ul>
+            <li>Provided production support across distributed AWS services and APIs, tracing end-to-end request flows through API Gateway, AppSync, EventBridge, Lambda and Step Functions.</li>
+            <li>Ran root-cause analysis using CloudWatch, and resolved data issues across DynamoDB and MySQL with the architecture team.</li>
+            <li>Supported OpenSearch dashboards for search and indexing, and used Athena for analytical reporting beyond NoSQL's reach.</li>
+            <li>Worked on Glue and DMS for background processing and data migration; shipped fixes across Dev, QA, UAT and PROD.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-head">
+          <h3>Legal Hold</h3>
+          <span class="loc">USA · Zapproved</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-stack">
+            <span>.NET Core</span><span>Angular 16</span><span>Microservices</span><span>AWS SQS</span><span>AWS SNS</span><span>S3</span><span>DynamoDB</span>
+          </div>
+          <p class="proj-overview">Distributed microservices powering large-scale legal hold workflows for enterprise customers.</p>
+          <ul>
+            <li>Built event-driven communication with SQS and SNS for reliable asynchronous processing.</li>
+            <li>Engineered retry, DLQ and fault-tolerant messaging patterns that reduced message loss to near-zero.</li>
+            <li>Contributed to an auditability- and compliance-focused architecture for legal and regulatory needs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-head">
+          <h3>Cloudfy B2B E-Commerce Data Migration Platform</h3>
+          <span class="loc">UK</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-stack">
+            <span>.NET Core</span><span>ASP.NET Web API</span><span>SQL Server</span><span>Azure Functions</span><span>Azure Service Bus</span>
+          </div>
+          <p class="proj-overview">Scalable backend for multi-tenant B2B transactions, admin workflows and third-party integrations.</p>
+          <ul>
+            <li>Delivered platform modules that contributed to 99.9%+ production uptime.</li>
+            <li>Built automated data migration workflows for large-scale customer onboarding and platform migration.</li>
+            <li>Added validation and reconciliation mechanisms to keep data accurate through migration, cutting manual effort.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-head">
+          <h3>Online Conversations &amp; Celebrity Interview Scheduling Platform</h3>
+          <span class="loc">USA</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-stack">
+            <span>.NET Core</span><span>ReactJS</span><span>AWS Cognito</span><span>Lambda</span><span>DynamoDB</span><span>S3</span>
+          </div>
+          <p class="proj-overview">A platform for scheduling and running online conversations and interviews with celebrities, influencers and industry experts.</p>
+          <ul>
+            <li>Designed REST APIs for scheduling, booking management, profiles, notifications and session tracking.</li>
+            <li>Built responsive ReactJS interfaces for booking, discovery and live session management.</li>
+            <li>Integrated Cognito for secure auth and role-based access; used Lambda and DynamoDB for scalable, high-volume booking.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-dim); border-top:1px solid var(--paper-line);">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Foundation</div>
+      <h2 class="section-title">Certifications &amp; education</h2>
+    </div>
+    <div class="split-two">
+      <div class="reveal">
+        <h3 class="mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-dark-lo); margin-bottom:18px;">Certifications</h3>
+        <div class="edu-item">
+          <div class="deg">AWS Certified AI Practitioner (AIF-C01)</div>
+          <div class="sch">April 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">Microsoft Azure Developer Associate (AZ-204)</div>
+          <div class="sch">April 2022</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 class="mono" style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-dark-lo); margin-bottom:18px;">Education</h3>
+        <div class="edu-item">
+          <div class="deg">Master of Computer Applications (MCA)</div>
+          <div class="sch">IGNOU · 2017 — 2019</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">Bachelor of Computer Applications (BCA)</div>
+          <div class="sch">IGNOU · 2011 — 2014</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--teal-hi)">Contact</div>
+    <h2>Let's build something that stays up.</h2>
+    <p style="color:var(--text-lo); max-width:520px; font-size:15.5px;">Immediate joiner, open to remote, hybrid, on-site or in-office roles. The fastest way to reach me is email or LinkedIn.</p>
+
+    <div class="term reveal" style="margin-top:32px;">
+      <div class="term-bar"><span></span><span></span><span></span></div>
+      <p><span class="prompt">$</span> whoami</p>
+      <p class="out">shrawan-kumar — senior .net developer / technical lead</p>
+      <p><span class="prompt">$</span> status --check</p>
+      <p class="out">OPEN_TO_WORK :: immediate_joiner :: remote | hybrid | onsite</p>
+      <p><span class="prompt">$</span> contact --reach</p>
+      <p class="out">email · phone · linkedin · github ↓</p>
+    </div>
+
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:shrawan.kumar2994@gmail.com">shrawan.kumar2994@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+919211369951">+91 92113 69951</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/shrawan-choubey" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/choubeyshrawan" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Shrawan Kumar. Built with intent.</span>
+      <span>Delhi NCR, India</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
