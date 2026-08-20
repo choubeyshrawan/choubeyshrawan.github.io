@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://choubeyshrawan.github.io/choubeyshrawan/sitemap.xml
+Sitemap: https://choubeyshrawan.github.io/sitemap.xml
